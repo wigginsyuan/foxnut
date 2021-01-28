@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+	name:指定suite套件的名字;
+	
+	parallel:是否在不同的线程并行进行测试，要与thread-count配套使用,parallel
+	该参数的值false，methods，tests，classes，instances。默认false
+	parallel必须和thread-count配套使用，否则相当于无效参数，thread-count决定了并行测试时开启的线程数量
+	parallel="methods"  TestNG将并行执行所有的测试方法在不同的线程里
+	parallel="tests"  TestNG将并行执行在同一个<test>下的所有方法在不同线程里
+	parallel="classes"  TestNG将并行执行在相同<class>下的方法在不同线程里
+	parallel="instances"  TestNG将并行执行相同实例下的所有方法在不同的县城里;
+	
+	thread-count:与parallel配套使用，线程池的大小，决定并行线程数量
+ -->
+<suite name="Suite" thread-count="1"  parallel="classes" >
+	<!--
+		verbose:控制台输出的详细内容等级,0-10级（0无，10最详细），不在报告显示
+		preserve-order:是否按照排序执行，如果是true，将按照xml文件中的顺序去执行
+		name:test的名字，将出现在报告里	
+	  -->
+	<parameter name="host"  value="http://ebjqa.zzrcer.com/peony"/>
+	<test verbose="2" preserve-order="true" name="qa环境xxx项目接口自动化测试" >
+		<classes>
+			<class name="org.zzrc.AppTest"/>
+     		<class name="org.zzrc.HttpUtilTest"/>
+     		<class name="org.zzrc.JDBCUtilTest"/>
+     		<class name="org.zzrc.AKSKUtilTest"/>
+     		<class name="org.zzrc.DataProviderTest"/>
+		</classes>
+	</test>
+</suite>
+
+	

@@ -1,0 +1,13 @@
+case001:
+  url : /aksk/salesman/queryLoanOrderList
+  jsonBody: {"salesmanGidList":["202004281234"],"status":4,"currPage":1,"pageSize":10}
+  headers:
+    content-type : json
+    type : aksk
+
+case002:
+  url : /aksk/salesman/queryLoanOrderList
+  jsonBody : {"salesmanGidList":["202004281234"],"status":4,"currPage":1,"pageSize":10}
+  headers:
+    content-type: json
+    type: aksk
